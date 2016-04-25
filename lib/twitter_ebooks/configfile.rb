@@ -60,7 +60,7 @@ module Ebooks
           config_hash = {'twitter' => {}}
           config_twitter = config_hash['twitter']
 
-          ['username', 'consumer key', 'consumer secret', 'access token', 'access token secret'].each do |name|
+          ['model', 'owner', 'username', 'consumer key', 'consumer secret', 'access token', 'access token secret'].each do |name|
             env_name = prefix + name.upcase.gsub(/ /, '_') + suffix
             config_twitter[name] = parse_hash[env_name] if parse_hash.has_key? env_name
           end
