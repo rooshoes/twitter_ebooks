@@ -18,7 +18,8 @@ module Ebooks
       return unless match_data
       reader = File.method :read
       case match_data.to_s.downcase
-      when '.yaml'
+      when '.yaml', '.yml'
+        log "case .yaml"
         require 'yaml'
         parser = YAML.method :load
       when '.json'
