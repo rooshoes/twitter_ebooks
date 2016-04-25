@@ -4,4 +4,4 @@ script:
   - rspec spec
 notifications:
   email:
-    - ebooks@mispy.me
+    - rooshoes@me.com
