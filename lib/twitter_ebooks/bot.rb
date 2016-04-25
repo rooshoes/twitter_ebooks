@@ -183,9 +183,9 @@ module Ebooks
 
       @username = username
       @delay_range ||= 1..6
-      configure
 
       config(username)
+      configure
 
       b.call(self) unless b.nil?
       Bot.all << self
