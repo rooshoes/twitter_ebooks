@@ -18,7 +18,8 @@ module Ebooks
       return unless match_data
       reader = File.method :read
       case match_data.to_s.downcase
-      when '.yaml'
+      when '.yaml', '.yml'
+        log "case .yaml"
         require 'yaml'
         parser = YAML.method :load
       when '.json'
@@ -59,7 +60,7 @@ module Ebooks
           config_hash = {'twitter' => {}}
           config_twitter = config_hash['twitter']
 
-          ['username', 'consumer key', 'consumer secret', 'access token', 'access token secret'].each do |name|
+          ['model', 'owner', 'username', 'consumer key', 'consumer secret', 'access token', 'access token secret'].each do |name|
             env_name = prefix + name.upcase.gsub(/ /, '_') + suffix
             config_twitter[name] = parse_hash[env_name] if parse_hash.has_key? env_name
           end

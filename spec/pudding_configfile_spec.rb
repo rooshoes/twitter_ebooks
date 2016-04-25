@@ -195,31 +195,31 @@ describe Ebooks::Bot do
       ask me_to_try 'yaml', {1=>{2=>{3=>{4=>{5=>{6=>{7=>{8=>{9=>10}}}}}}}}}
       expect do
         my[1] = 0
-      end.to raise_error
+      end.to raise_error(RuntimeError)
       expect do
         my[1][2] = 0
-      end.to raise_error
+      end.to raise_error(RuntimeError)
       expect do
         my[1][2][3] = 0
-      end.to raise_error
+      end.to raise_error(RuntimeError)
       expect do
         my[1][2][3][4] = 0
-      end.to raise_error
+      end.to raise_error(RuntimeError)
       expect do
         my[1][2][3][4][5] = 0
-      end.to raise_error
+      end.to raise_error(RuntimeError)
       expect do
         my[1][2][3][4][5][6] = 0
-      end.to raise_error
+      end.to raise_error(RuntimeError)
       expect do
         my[1][2][3][4][5][6][7] = 0
-      end.to raise_error
+      end.to raise_error(RuntimeError)
       expect do
         my[1][2][3][4][5][6][7][8] = 0
-      end.to raise_error
+      end.to raise_error(RuntimeError)
       expect do
         my[1][2][3][4][5][6][7][8][9] = 0
-      end.to raise_error
+      end.to raise_error(RuntimeError)
     end
 
     it 'doesn\'t throw an exception when given a file that doesn\'t actually exist' do
