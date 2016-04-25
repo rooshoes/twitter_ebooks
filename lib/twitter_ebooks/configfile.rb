@@ -19,7 +19,6 @@ module Ebooks
       reader = File.method :read
       case match_data.to_s.downcase
       when '.yaml', '.yml'
-        log "case .yaml"
         require 'yaml'
         parser = YAML.method :load
       when '.json'
